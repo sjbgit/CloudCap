@@ -4,6 +4,7 @@ import java.util.Collection;
 
 public class Patient extends User {
 
+	/*
 	private long duration;
 	
 	public long getDuration() {
@@ -13,7 +14,7 @@ public class Patient extends User {
 	public void setDuration(long duration) {
 		this.duration = duration;
 	}
-	
+	*/
 	private Collection<Prescription> prescriptions;
 	
 	public Collection<Prescription> getPrescriptions() {
