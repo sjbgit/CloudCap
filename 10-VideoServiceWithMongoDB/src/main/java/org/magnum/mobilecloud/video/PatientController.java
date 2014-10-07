@@ -30,7 +30,7 @@ public class PatientController {
 	//private VideoFileManager videoDataMgr;
 	
 	@Autowired
-	private PatientRepository patients;
+	private PatientRepository patientRepo;
 	
 	public PatientController() {
 		// TODO Auto-generated constructor stub
@@ -46,7 +46,7 @@ public class PatientController {
 		//videos.put(1, 1000);
 		
 		Patient p = new Patient();
-		p.setName("test patient 1");
+		p.setName("test patient UPDATED IN SVC 1");
 		p.setPassword("test patient 1 password");
 		
 		Prescription prescript = new Prescription();
@@ -63,7 +63,7 @@ public class PatientController {
 		
 		
 		
-		
+		patientRepo.save(p);
 		
 		/*
 		User v = new User();
@@ -76,6 +76,6 @@ public class PatientController {
 		int x = 1;
 		int y = 2;
 		
-		return Lists.newArrayList(v);
+		return Lists.newArrayList(p);
 	}
 }

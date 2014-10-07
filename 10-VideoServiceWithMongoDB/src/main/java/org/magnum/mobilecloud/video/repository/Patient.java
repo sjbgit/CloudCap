@@ -1,9 +1,16 @@
 package org.magnum.mobilecloud.video.repository;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
+
 
 public class Patient extends User {
 
+	public Patient() {
+		prescriptions = new ArrayList<Prescription>();
+	}
+	
 	/*
 	private long duration;
 	
