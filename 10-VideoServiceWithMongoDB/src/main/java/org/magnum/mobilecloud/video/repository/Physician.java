@@ -3,9 +3,9 @@ package org.magnum.mobilecloud.video.repository;
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class Doctor extends User {
+public class Physician extends User {
 
-	public Doctor() {
+	public Physician() {
 		patients = new ArrayList<Patient>();
 	}
 	

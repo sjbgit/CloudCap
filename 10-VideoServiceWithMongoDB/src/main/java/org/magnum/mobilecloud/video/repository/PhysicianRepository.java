@@ -5,8 +5,8 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 
 
-@RepositoryRestResource(path = "/doctors")
-public interface DoctorRepository extends MongoRepository<Doctor, Long>{
+@RepositoryRestResource(path = "/physicians")
+public interface PhysicianRepository extends MongoRepository<Physician, Long>{
 	
 
 }

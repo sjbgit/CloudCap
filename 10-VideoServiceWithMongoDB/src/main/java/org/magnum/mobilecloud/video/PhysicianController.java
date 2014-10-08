@@ -1,5 +1,5 @@
 package org.magnum.mobilecloud.video;
 
-public class DoctorController {
+public class PhysicianController {
 
 }
