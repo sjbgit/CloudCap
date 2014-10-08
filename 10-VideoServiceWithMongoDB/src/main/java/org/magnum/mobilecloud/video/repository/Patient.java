@@ -9,6 +9,7 @@ public class Patient extends User {
 
 	public Patient() {
 		prescriptions = new ArrayList<Prescription>();
+		statuses = new ArrayList<Status>();
 	}
 	
 	/*
@@ -31,5 +32,16 @@ public class Patient extends User {
 	public void setPrescriptions(Collection<Prescription> prescriptions) {
 		this.prescriptions = prescriptions;
 	}
+	
+	public Collection<Status> getStatuses() {
+		return statuses;
+	}
+
+	public void setStatuses(Collection<Status> statuses) {
+		this.statuses = statuses;
+	}
+
+	private Collection<Status> statuses;
+	
 		
 }

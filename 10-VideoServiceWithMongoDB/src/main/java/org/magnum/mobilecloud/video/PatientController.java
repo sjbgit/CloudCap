@@ -1,10 +1,14 @@
 package org.magnum.mobilecloud.video;
 
 import java.util.Collection;
+import java.util.Date;
+import java.util.List;
 
+import org.magnum.mobilecloud.video.repository.PainLevel;
 import org.magnum.mobilecloud.video.repository.Patient;
 import org.magnum.mobilecloud.video.repository.PatientRepository;
 import org.magnum.mobilecloud.video.repository.Prescription;
+import org.magnum.mobilecloud.video.repository.Status;
 import org.magnum.mobilecloud.video.repository.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -60,10 +64,30 @@ public class PatientController {
 		p.getPrescriptions().add(prescript);
 		p.getPrescriptions().add(prescript1);
 		
+		Status s = new Status();
+		s.setPainLevel(PainLevel.Moderate);
+		s.setStatusDate(new Date());
+		
+		p.getStatuses().add(s);
+		
 		
 		
 		
 		patientRepo.save(p);
+		
+		
+		
+		List<Patient> all = patientRepo.findAll();
+		
+		Patient zero = patientRepo.findOne((long)0);
+		
+		Status s1 = new Status();
+		s1.setPainLevel(PainLevel.Severe);
+		s1.setStatusDate(new Date());
+		
+		zero.getStatuses().add(s1);
+		
+		patientRepo.save(zero);
 		
 		/*
 		User v = new User();
