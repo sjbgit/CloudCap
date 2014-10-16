@@ -50,7 +50,7 @@ public class PatientController {
 		//videos.put(1, 1000);
 		
 		Patient p = new Patient();
-		p.setName("test patient UPDATED IN SVC 1");
+		p.setFirstName("test patient UPDATED IN SVC 1");
 		p.setPassword("test patient 1 password");
 		
 		Prescription prescript = new Prescription();

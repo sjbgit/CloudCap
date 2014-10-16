@@ -8,26 +8,26 @@ public class User {
 	@Id
 	private long id;
 
-	private String name;
+	private String firstName;
 	private String password;
 	private long duration;
 
 	public User() {
 	}
 
-	public User(String name, String password, long duration) {
+	public User(String firstName, String password, long duration) {
 		super();
-		this.name = name;
+		this.firstName = firstName;
 		this.password = password;
 		this.duration = duration;
 	}
 
-	public String getName() {
-		return name;
+	public String getFirstName() {
+		return firstName;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
 
 	public String getPassword() {
@@ -64,7 +64,7 @@ public class User {
 	@Override
 	public int hashCode() {
 		// Google Guava provides great utilities for hashing
-		return Objects.hashCode(name, password, duration);
+		return Objects.hashCode(firstName, password, duration);
 	}
 
 	/**
@@ -77,7 +77,7 @@ public class User {
 		if (obj instanceof User) {
 			User other = (User) obj;
 			// Google Guava provides great utilities for equals too!
-			return Objects.equal(name, other.name)
+			return Objects.equal(firstName, other.firstName)
 					&& Objects.equal(password, other.password)
 					&& duration == other.duration;
 		} else {
