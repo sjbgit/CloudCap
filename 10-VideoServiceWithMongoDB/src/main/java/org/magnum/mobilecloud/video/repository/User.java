@@ -1,5 +1,7 @@
 package org.magnum.mobilecloud.video.repository;
 
+import java.util.Date;
+
 import org.springframework.data.annotation.Id;
 
 import com.google.common.base.Objects;
@@ -11,6 +13,8 @@ public class User {
 	private String firstName;
 	private String password;
 	private long duration;
+	//private String medicalRecordNumber;
+	private Date dateOfBirth;
 
 	public User() {
 	}

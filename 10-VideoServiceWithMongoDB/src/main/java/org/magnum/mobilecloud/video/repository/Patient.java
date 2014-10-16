@@ -23,6 +23,9 @@ public class Patient extends User {
 		this.duration = duration;
 	}
 	*/
+	
+	private String medicalRecordNumber;
+	
 	private Collection<Prescription> prescriptions;
 	
 	public Collection<Prescription> getPrescriptions() {
@@ -39,6 +42,14 @@ public class Patient extends User {
 
 	public void setStatuses(Collection<Status> statuses) {
 		this.statuses = statuses;
+	}
+
+	public String getMedicalRecordNumber() {
+		return medicalRecordNumber;
+	}
+
+	public void setMedicalRecordNumber(String medicalRecordNumber) {
+		this.medicalRecordNumber = medicalRecordNumber;
 	}
 
 	private Collection<Status> statuses;
