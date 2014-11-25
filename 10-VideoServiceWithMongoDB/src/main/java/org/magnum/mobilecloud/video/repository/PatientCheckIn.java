@@ -2,6 +2,7 @@ package org.magnum.mobilecloud.video.repository;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 import org.springframework.data.annotation.Id;
 
@@ -88,15 +89,15 @@ public class PatientCheckIn {
     
     
     
-    public Collection<PrescriptionCheckIn> getPrescriptionCheckIns() {
+    public List<PrescriptionCheckIn> getPrescriptionCheckIns() {
         return prescriptionCheckIns;
     }
 
-    public void setPrescriptionCheckIns(Collection<PrescriptionCheckIn> prescriptionCheckIns) {
+    public void setPrescriptionCheckIns(List<PrescriptionCheckIn> prescriptionCheckIns) {
         this.prescriptionCheckIns = prescriptionCheckIns;
     }
 
-    private Collection<PrescriptionCheckIn> prescriptionCheckIns;
+    private List<PrescriptionCheckIn> prescriptionCheckIns;
 	
 	
 	

@@ -2,6 +2,7 @@ package org.magnum.mobilecloud.video;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 import org.magnum.mobilecloud.video.client.CheckInSvcApi;
 import org.magnum.mobilecloud.video.client.PhysicianSvcApi;
@@ -49,12 +50,12 @@ public class CheckInController {
 		prci.setPrescriptionDosage("test dosage");
 		
 		
-		Collection<PrescriptionCheckIn> scriptCheckIns = new ArrayList<PrescriptionCheckIn>();
+		List<PrescriptionCheckIn> scriptCheckIns = new ArrayList<PrescriptionCheckIn>();
 		scriptCheckIns.add(prci);
 		
 		
 		
-		pci.setPrescriptionCheckIns(scriptCheckIns); //.toArray(new PrescriptionCheckIn[scriptCheckIns.size()]));
+		//pci.setPrescriptionCheckIns(scriptCheckIns); //.toArray(new PrescriptionCheckIn[scriptCheckIns.size()]));
 		
 		checkIns.add(pci);
 		

@@ -6,19 +6,17 @@ public class PrescriptionCheckIn {
 		
 	}
 	
-	public long getCheckInDate() {
-
-        return prescriptionCheckInDate;
-    }
-
-
-    public void setPrescriptionCheckInDate(long prescriptionCheckInDate) {
-        this.prescriptionCheckInDate = prescriptionCheckInDate;
-    }
-
     private long prescriptionCheckInDate;
 
-    private String prescriptionName;
+    public long getPrescriptionCheckInDate() {
+		return prescriptionCheckInDate;
+	}
+
+	public void setPrescriptionCheckInDate(long prescriptionCheckInDate) {
+		this.prescriptionCheckInDate = prescriptionCheckInDate;
+	}
+
+	private String prescriptionName;
 
     public String getPrescriptionName() {
         return prescriptionName;
