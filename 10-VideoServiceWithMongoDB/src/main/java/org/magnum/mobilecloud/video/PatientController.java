@@ -55,11 +55,11 @@ public class PatientController {
 		
 		Prescription prescript = new Prescription();
 		prescript.setName("Oxyctin");
-		prescript.setDosage(900);
+		prescript.setDosage("900");
 		
 		Prescription prescript1 = new Prescription();
 		prescript1.setName("Lamasil");
-		prescript1.setDosage(2000);
+		prescript1.setDosage("2000");
 		
 		p.getPrescriptions().add(prescript);
 		p.getPrescriptions().add(prescript1);
