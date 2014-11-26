@@ -7,10 +7,13 @@ import java.util.List;
 import org.magnum.mobilecloud.video.client.CheckInSvcApi;
 import org.magnum.mobilecloud.video.client.PhysicianSvcApi;
 import org.magnum.mobilecloud.video.repository.CheckIn;
+import org.magnum.mobilecloud.video.repository.CheckInRepository;
 import org.magnum.mobilecloud.video.repository.PatientCheckIn;
+import org.magnum.mobilecloud.video.repository.PatientRepository;
 import org.magnum.mobilecloud.video.repository.Physician;
 import org.magnum.mobilecloud.video.repository.PrescriptionCheckIn;
 import org.magnum.mobilecloud.video.repository.PrescriptionCheckInViewModel;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -24,9 +27,22 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class CheckInController {
 
 	
+	public CheckInController() {
+		String test = "test";
+		
+		String test1 = test;
+		
+	}
+	
+	@Autowired
+	private CheckInRepository checkInRepo;
+	
+	
 	@RequestMapping(value=CheckInSvcApi.CHECKIN_SVC_PATH, method=RequestMethod.POST)
 	public @ResponseBody boolean addCheckIn(@RequestBody PatientCheckIn checkIn){		 
 		 
+		checkInRepo.save(checkIn);
+		
 		return true;
 		
 		//videos.save(v);
