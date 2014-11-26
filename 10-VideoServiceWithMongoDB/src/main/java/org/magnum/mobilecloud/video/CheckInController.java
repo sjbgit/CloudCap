@@ -42,6 +42,11 @@ public class CheckInController {
 	public @ResponseBody boolean addCheckIn(@RequestBody PatientCheckIn checkIn){		 
 		 
 		checkInRepo.save(checkIn);
+		//checkInRepo.
+		
+		//checkInRepo.
+		
+		
 		
 		return true;
 		
