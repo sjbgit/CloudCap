@@ -50,7 +50,15 @@ public class CheckInController {
 		 //return true;
 	}
 	
+	@RequestMapping(value=CheckInSvcApi.CHECKIN_SVC_PATH + "/{id}", method=RequestMethod.GET)
+	public ResponseEntity<Collection<PatientCheckIn>> getCheckInsByPatientId(@PathVariable("id") long id){	
+		
+		List<PatientCheckIn> checkIns = checkInRepo.findAll();
+		return new ResponseEntity<Collection<PatientCheckIn>>(checkIns, HttpStatus.OK);
 	
+	}
+	
+	/*
 	@RequestMapping(value=CheckInSvcApi.CHECKIN_SVC_PATH + "/{id}", method=RequestMethod.GET)
 	public ResponseEntity<Collection<PatientCheckIn>> getCheckInsByPatientId(@PathVariable("id") long id){	
 		
@@ -98,5 +106,5 @@ public class CheckInController {
 		 //return true;
 	}
 	
-	
+	*/
 }
