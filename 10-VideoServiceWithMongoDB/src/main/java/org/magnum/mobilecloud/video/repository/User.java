@@ -10,10 +10,18 @@ public class User {
 	@Id
 	private String id;
 
+	private String lastName;
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
 	private String firstName;
 	private String password;
-	private long duration;
-	//private String medicalRecordNumber;
+	private long duration;	
 	private Date dateOfBirth;
 
 	public User() {
