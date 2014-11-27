@@ -41,13 +41,14 @@ public class CheckInController {
 	@RequestMapping(value=CheckInSvcApi.CHECKIN_SVC_PATH, method=RequestMethod.POST)
 	public @ResponseBody boolean addCheckIn(@RequestBody PatientCheckIn checkIn){		 
 		 
+		
 		checkInRepo.save(checkIn);
 		//checkInRepo.
 		
 		//checkInRepo.
 		
 		
-		
+		//checkInRepo.
 		return true;
 		
 		//videos.save(v);
@@ -56,10 +57,19 @@ public class CheckInController {
 	}
 	
 	@RequestMapping(value=CheckInSvcApi.CHECKIN_SVC_PATH + "/{id}", method=RequestMethod.GET)
-	public ResponseEntity<Collection<PatientCheckIn>> getCheckInsByPatientId(@PathVariable("id") long id){	
+	public ResponseEntity<Collection<PatientCheckIn>> getCheckInsByPatientId(@PathVariable("id") String id){	
 		
 		List<PatientCheckIn> checkIns = checkInRepo.findAll();
-		return new ResponseEntity<Collection<PatientCheckIn>>(checkIns, HttpStatus.OK);
+		
+		List<PatientCheckIn> filteredCheckIns = new ArrayList<PatientCheckIn>();
+		for (PatientCheckIn pci : checkIns) {
+			if (pci.getPatientId() == id) {
+				filteredCheckIns.add(pci);
+			}
+		}
+		
+		return new ResponseEntity<Collection<PatientCheckIn>>(filteredCheckIns, HttpStatus.OK);
+				
 	
 	}
 	

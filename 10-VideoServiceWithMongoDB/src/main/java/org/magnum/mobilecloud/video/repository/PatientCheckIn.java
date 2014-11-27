@@ -1,7 +1,7 @@
 package org.magnum.mobilecloud.video.repository;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 import org.springframework.data.annotation.Id;
@@ -9,13 +9,13 @@ import org.springframework.data.annotation.Id;
 public class PatientCheckIn {
 
 	@Id
-	private long id;
+	private String id;
 	
-	public long getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 	
@@ -33,25 +33,25 @@ public class PatientCheckIn {
         this.prescriptionCheckIns = new ArrayList<PrescriptionCheckIn>();
     }
 
-    public long getPatientId() {
+    public String getPatientId() {
         return patientId;
     }
 
-    public void setPatientId(long patientId) {
+    public void setPatientId(String patientId) {
         this.patientId = patientId;
     }
 
-    public long getPhysicianId() {
+    public String getPhysicianId() {
         return physicianId;
     }
 
-    public void setPhysicianId(long physicianId) {
+    public void setPhysicianId(String physicianId) {
         this.physicianId = physicianId;
     }
 
-    private long patientId;
+    private String patientId;
 
-    private long physicianId;
+    private String physicianId;
 
     private String mouthPain;
 

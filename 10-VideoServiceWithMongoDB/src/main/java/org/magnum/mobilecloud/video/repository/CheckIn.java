@@ -1,5 +1,6 @@
 package org.magnum.mobilecloud.video.repository;
 
+import java.math.BigInteger;
 import java.util.Collection;
 import java.util.Date;
 
@@ -8,13 +9,13 @@ import org.springframework.data.annotation.Id;
 public class CheckIn {
 
 	@Id
-	private long id;
+	private String id;
 	
-	public long getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 	

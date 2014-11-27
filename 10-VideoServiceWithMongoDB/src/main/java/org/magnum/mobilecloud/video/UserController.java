@@ -42,7 +42,7 @@ public class UserController {
 		
 		User v = new User();
 		//v.setDuration(1000);
-		v.setId(99);
+		//v.setId("");
 		v.setFirstName("test name");
 		v.setPassword("my password");
 		//v.setUrl("test url");

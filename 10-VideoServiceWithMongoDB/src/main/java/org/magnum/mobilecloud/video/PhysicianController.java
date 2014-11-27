@@ -2,6 +2,8 @@ package org.magnum.mobilecloud.video;
 
 import org.magnum.mobilecloud.video.client.PhysicianSvcApi;
 import org.magnum.mobilecloud.video.repository.Physician;
+import org.magnum.mobilecloud.video.repository.PhysicianRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -18,14 +20,19 @@ public class PhysicianController {
 		Integer y = x;
 	}
 	
+	@Autowired
+	PhysicianRepository physRepo;
+	
 	@RequestMapping(value=PhysicianSvcApi.PHYSICIAN_SVC_PATH + "/{id}", method=RequestMethod.GET)
-	public ResponseEntity<Physician> getPhysician(@PathVariable("id") long id){	
+	public ResponseEntity<Physician> getPhysician(@PathVariable("id") String id){	
 		
 	
+		Physician phys = physRepo.findOne(id);
+		
 			//CredentialsSvcApi api;
 		
-		Physician phys = new Physician();
-		phys.setId(98765);
+		//Physician phys = new Physician();
+		//phys.setId("test phys");
 		
 		
 		

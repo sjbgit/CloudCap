@@ -14,7 +14,7 @@ public static final String PHYSICIAN_SVC_PATH = "/physician";
 		
 	//http://localhost:8080/video/search/findByName?title=xxx
 	@GET(PHYSICIAN_SVC_PATH + "/{id}")
-	public Physician getPhysician(@Path(ID_PARAMETER) long id);
+	public Physician getPhysician(@Path(ID_PARAMETER) String id);
 
 	
 

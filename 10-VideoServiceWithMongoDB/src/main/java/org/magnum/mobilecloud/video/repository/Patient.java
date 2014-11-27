@@ -24,6 +24,16 @@ public class Patient extends User {
 	}
 	*/
 	
+	private String physicianId;
+	
+	public String getPhysicianId() {
+		return physicianId;
+	}
+
+	public void setPhysicianId(String physicianId) {
+		this.physicianId = physicianId;
+	}
+
 	private String medicalRecordNumber;
 	
 	private Collection<Prescription> prescriptions;
