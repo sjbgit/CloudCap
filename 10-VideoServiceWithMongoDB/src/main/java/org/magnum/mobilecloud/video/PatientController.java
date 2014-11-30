@@ -18,6 +18,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -73,6 +74,19 @@ public class PatientController {
 		
 		return new ResponseEntity<Collection<Patient>>(filteredPatients, HttpStatus.OK);		
 		
+	}
+	
+	@RequestMapping(value=PATIENT_SVC_PATH + "/patientprescription/{id}", method=RequestMethod.POST)
+    public @ResponseBody ResponseEntity<Patient> updatePatientPrescriptions(@PathVariable("id") String id, @RequestBody List<Prescription> prescriptions) {
+		Patient patient = patientRepo.findOne(id);
+		
+		if (patient != null) {
+			patient.setPrescriptions(prescriptions);
+			patientRepo.save(patient);
+		}
+		
+		return new ResponseEntity<Patient>(patient, HttpStatus.NOT_FOUND);
+	
 	}
 	
 

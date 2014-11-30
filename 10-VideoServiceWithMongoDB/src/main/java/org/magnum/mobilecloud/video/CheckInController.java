@@ -63,7 +63,7 @@ public class CheckInController {
 		
 		List<PatientCheckIn> filteredCheckIns = new ArrayList<PatientCheckIn>();
 		for (PatientCheckIn pci : checkIns) {
-			if (pci.getPatientId() == id) {
+			if (pci.getPatientId().equals(id)) {
 				filteredCheckIns.add(pci);
 			}
 		}
