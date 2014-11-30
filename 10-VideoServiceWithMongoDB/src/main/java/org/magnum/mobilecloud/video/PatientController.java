@@ -28,27 +28,14 @@ import com.google.common.collect.Lists;
 
 @Controller
 public class PatientController {
-	//public static final String DATA_PARAMETER = "data";
-
-	//public static final String ID_PARAMETER = "id";
 
 	public static final String PATIENT_SVC_PATH = "/patients";
-	
-	//public static final String VIDEO_DATA_PATH = PATIENT_SVC_PATH + "/{id}/data";
-	
-	//private Map videos = new HashMap();
-	
-	//private VideoFileManager videoDataMgr;
-	
+
 	@Autowired
 	private PatientRepository patientRepo;
 	
 	public PatientController() {
-		// TODO Auto-generated constructor stub
-		int x = 1;
 		
-		int y = x;
-		//videoDataMgr = VideoFileManager.get();
 	}
 	
 	@RequestMapping(value=PATIENT_SVC_PATH + "/{id}", method=RequestMethod.GET)
@@ -78,7 +65,17 @@ public class PatientController {
 	
 	@RequestMapping(value=PATIENT_SVC_PATH + "/patientprescription/{id}", method=RequestMethod.POST)
     public @ResponseBody ResponseEntity<Patient> updatePatientPrescriptions(@PathVariable("id") String id, @RequestBody List<Prescription> prescriptions) {
-		Patient patient = patientRepo.findOne(id);
+				
+		//Patient patient = patientRepo.findOne(id);
+		
+		Patient patient = null;
+		Collection<Patient> ps = patientRepo.findAll();
+		
+		for(Patient p : ps) {
+			if (p.getId().equals(id)) {
+				patient = p;
+			}
+		}
 		
 		if (patient != null) {
 			patient.setPrescriptions(prescriptions);
@@ -89,7 +86,7 @@ public class PatientController {
 	
 	}
 	
-
+/*
 	@RequestMapping(value=PATIENT_SVC_PATH + "/all", method=RequestMethod.GET)
     public @ResponseBody Collection<Patient> getPatientList() {
 		//videos.put(1, 1000);
@@ -142,9 +139,11 @@ public class PatientController {
 		v.setPassword("my password");
 		//v.setUrl("test url");
 		*/
+	/*
 		int x = 1;
 		int y = 2;
 		
 		return Lists.newArrayList(p);
 	}
+	*/
 }
